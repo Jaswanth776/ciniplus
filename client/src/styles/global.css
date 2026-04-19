@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0f172a] text-slate-100;
+  }
+}
+
+@layer components {
+  .cinema-screen {
+    @apply h-12 w-full rounded-t-[50%] bg-gradient-to-t from-cinema-bg to-cinema-primary/40 shadow-[0_-15px_30px_rgba(99,102,241,0.3)] mb-10;
+  }
+  
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-700/50;
+  }
+
+  /* Custom Scrollbar for movie carousel */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

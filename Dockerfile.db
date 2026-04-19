@@ -1,0 +1,6 @@
+FROM mysql:8.0
+
+# Copy the initialization scripts directly into the image
+# MySQL will automatically execute any .sql scripts in this directory on first boot
+COPY ./init-scripts/schema.sql /docker-entrypoint-initdb.d/1_schema.sql
+COPY ./init-scripts/seed.sql /docker-entrypoint-initdb.d/2_seed.sql
